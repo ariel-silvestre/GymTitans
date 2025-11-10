@@ -1,0 +1,194 @@
+/* Información de Contacto */
+.info-contacto {
+    padding: 80px 0;
+    background: #111111;
+}
+
+.contacto-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.contacto-card {
+    background: linear-gradient(145deg, #1a1a1a, #0d0d0d);
+    padding: 2.5rem;
+    border-radius: 15px;
+    text-align: center;
+    border: 2px solid #333;
+    transition: all 0.3s ease;
+}
+
+.contacto-card:hover {
+    transform: translateY(-5px);
+    border-color: #ffd700;
+}
+
+.contacto-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    color: #ffd700;
+}
+
+.contacto-card h3 {
+    font-family: 'Bebas Neue', cursive;
+    font-size: 1.8rem;
+    color: #ffffff;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.contacto-card p {
+    color: #ffd700;
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+.contacto-card span {
+    color: #cccccc;
+    font-size: 0.9rem;
+}
+
+/* Formulario de Contacto */
+.formulario-contacto {
+    padding: 80px 0;
+    background: #0a0a0a;
+}
+
+.form-container {
+    max-width: 600px;
+    margin: 0 auto;
+    background: linear-gradient(145deg, #1a1a1a, #0d0d0d);
+    padding: 3rem;
+    border-radius: 15px;
+    border: 2px solid #333;
+}
+
+.form-container h2 {
+    font-family: 'Bebas Neue', cursive;
+    font-size: 2.5rem;
+    color: #ffd700;
+    margin-bottom: 2rem;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 15px;
+    background: #0a0a0a;
+    border: 2px solid #333;
+    border-radius: 8px;
+    color: #ffffff;
+    font-family: 'Oswald', sans-serif;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #ffd700;
+    box-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: #666;
+}
+
+.btn-enviar {
+    width: 100%;
+    background: linear-gradient(135deg, #ffd700, #ffed4e);
+    color: #000;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 8px;
+    font-family: 'Oswald', sans-serif;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 2px solid #ffd700;
+    font-size: 1.1rem;
+}
+
+.btn-enviar:hover {
+    background: transparent;
+    color: #ffd700;
+    transform: translateY(-2px);
+}
+
+/* Mapa */
+.mapa {
+    padding: 80px 0;
+    background: #111111;
+}
+
+.mapa h2 {
+    font-family: 'Bebas Neue', cursive;
+    font-size: 2.5rem;
+    color: #ffd700;
+    margin-bottom: 2rem;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.mapa-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.mapa-placeholder {
+    background: linear-gradient(145deg, #1a1a1a, #0d0d0d);
+    padding: 4rem 2rem;
+    border-radius: 15px;
+    text-align: center;
+    border: 2px solid #333;
+}
+
+.mapa-icon {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    color: #ffd700;
+}
+
+.mapa-placeholder p {
+    font-size: 1.5rem;
+    color: #ffffff;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+}
+
+.mapa-placeholder span {
+    color: #cccccc;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .contacto-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .form-container {
+        padding: 2rem;
+        margin: 0 1rem;
+    }
+    
+    .mapa-placeholder {
+        padding: 3rem 1.5rem;
+    }
+}

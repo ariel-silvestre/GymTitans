@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sobre Nosotros — Titanes Fit Club</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg: #0f1724; /* dark navy */
+      --card: #0b1220;
+      --accent: #ffffff; /* white accent */
+      --muted: #94a3b8;
+      --glass: rgba(255,255,255,0.06);
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+      background: linear-gradient(180deg,#071027 0%, #0f1724 100%);
+      color:var(--accent);
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      line-height:1.5;
+    }
+    .container{max-width:1100px;margin:40px auto;padding:24px}
+
+    header{
+      display:flex;align-items:center;justify-content:space-between;margin-bottom:28px;
+    }
+    .brand{
+      display:flex;align-items:center;gap:14px;text-decoration:none;color:var(--accent)
+    }
+    .logo{
+      width:56px;height:56px;border-radius:12px;background:linear-gradient(135deg,#fff 0%, #f3f4f6 100%);display:grid;place-items:center;color:#0b1220;font-weight:800;font-size:18px
+    }
+    nav a{color:var(--muted);text-decoration:none;margin-left:18px;font-weight:500}
+
+    .hero{
+      display:grid;grid-template-columns:1fr 420px;gap:28px;align-items:center;margin-bottom:36px
+    }
+    .hero-left h1{font-size:36px;margin:0 0 12px}
+    .hero-left p{color:var(--muted);margin:0 0 18px}
+    .cta{display:inline-block;padding:12px 20px;border-radius:10px;background:var(--accent);color:#071027;font-weight:700;text-decoration:none}
+
+    .card{background:linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.02));border-radius:14px;padding:20px;box-shadow:0 6px 18px rgba(2,6,23,0.6)}
+    .who{display:flex;gap:18px}
+    .who img{width:140px;height:140px;border-radius:12px;object-fit:cover}
+    .who .text h3{margin:0 0 8px}
+
+    .stats{display:flex;gap:14px;margin-top:18px}
+    .stat{flex:1;background:var(--glass);padding:14px;border-radius:10px;text-align:center}
+    .stat h4{margin:0;font-size:20px}
+    .stat p{margin:6px 0 0;color:var(--muted)}
+
+    .values{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:22px}
+    .value{background:transparent;padding:14px;border-radius:10px;border:1px solid rgba(255,255,255,0.04)}
+    .value h5{margin:0 0 6px}
+    .value p{color:var(--muted);font-size:14px;margin:0}
+
+    .team{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:18px}
+    .trainer{background:var(--card);padding:14px;border-radius:12px;text-align:center}
+    .trainer img{width:100%;height:160px;object-fit:cover;border-radius:10px;margin-bottom:10px}
+    .trainer h6{margin:6px 0 2px}
+    .trainer p{margin:0;color:var(--muted);font-size:14px}
+
+    footer{margin-top:36px;padding-top:18px;border-top:1px solid rgba(255,255,255,0.03);display:flex;justify-content:space-between;align-items:center;color:var(--muted)}
+
+    /* Responsive */
+    @media (max-width:900px){
+      .hero{grid-template-columns:1fr;}
+      .team{grid-template-columns:repeat(2,1fr)}
+    }
+    @media (max-width:520px){
+      .team{grid-template-columns:1fr}
+      .brand span{display:none}
+      .hero-left h1{font-size:28px}
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <a class="brand" href="#">
+        <div class="logo">TF</div>
+        <div>
+          <div style="font-weight:800">Titanes Fit Club</div>
+          <div style="font-size:12px;color:var(--muted)">Fuerza • Disciplina • Comunidad</div>
+        </div>
+      </a>
+      <nav>
+        <a href="#sobre">Sobre</a>
+        <a href="#valores">Valores</a>
+        <a href="#equipo">Equipo</a>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <div class="hero-left">
+        <h1>Somos Titanes Fit Club</h1>
+        <p>Un gimnasio dedicado a transformar vidas con programas de entrenamiento personalizados, instalaciones de primer nivel y una comunidad que impulsa tu mejor versión.</p>
+        <a class="cta" href="#equipo">Únete ahora</a>
+
+        <div class="card" style="margin-top:22px">
+          <div class="who">
+            <img src="https://images.unsplash.com/photo-1554284126-aa88f22d8f15?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s=placeholder" alt="Entrenamiento">
+            <div class="text">
+              <h3 id="sobre">Nuestra historia</h3>
+              <p>Desde 2018, Titanes Fit Club nace con la idea de crear un espacio donde la constancia y el compañerismo sean el motor del progreso. Hoy somos más que un gimnasio: somos una comunidad.</p>
+              <div class="stats">
+                <div class="stat">
+                  <h4>1,200+</h4>
+                  <p>Miembros</p>
+                </div>
+                <div class="stat">
+                  <h4>20+</h4>
+                  <p>Clases semanales</p>
+                </div>
+                <div class="stat">
+                  <h4>12</h4>
+                  <p>Años promedio de experiencia</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="values" id="valores">
+            <div class="value">
+              <h5>Profesionalismo</h5>
+              <p>Entrenadores certificados y planes basados en evidencia para maximizar resultados.</p>
+            </div>
+            <div class="value">
+              <h5>Comunidad</h5>
+              <p>Ambiente inclusivo donde cada objetivo se celebra como un logro colectivo.</p>
+            </div>
+            <div class="value">
+              <h5>Innovación</h5>
+              <p>Equipamiento moderno y metodologías actualizadas para un entrenamiento eficiente.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <aside class="card">
+        <h3 style="margin-top:0">¿Qué ofrecemos?</h3>
+        <ul style="margin:12px 0 0;padding-left:18px;color:var(--muted)">
+          <li>Entrenamiento personalizado</li>
+          <li>Clases grupales: HIIT, fuerza, yoga</li>
+          <li>Asesoría nutricional</li>
+          <li>Área de musculación y cardio de alto nivel</li>
+        </ul>
+
+        <div style="margin-top:18px">
+          <strong>Horario:</strong>
+          <p style="margin:6px 0 0;color:var(--muted)">Lun - Vie: 5:00 - 22:00 · Sáb: 7:00 - 14:00</p>
+        </div>
+
+      </aside>
+    </section>
+
+    <section>
+      <h3 id="equipo">Nuestro equipo</h3>
+      <div class="team">
+        <div class="trainer card">
+          <img src="https://images.unsplash.com/photo-1607746882042-944635dfe10e?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=placeholder" alt="Entrenador 1">
+          <h6>Andrés Flores</h6>
+          <p>Jefe de entrenadores · Especialista en fuerza</p>
+        </div>
+        <div class="trainer card">
+          <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=placeholder" alt="Entrenador 2">
+          <h6>María Vargas</h6>
+          <p>Entrenadora funcional · Nutrición deportiva</p>
+        </div>
+        <div class="trainer card">
+          <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=placeholder" alt="Entrenador 3">
+          <h6>Diego Rojas</h6>
+          <p>Coach de resistencia · Preparador físico</p>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div>
+        <strong>Titanes Fit Club</strong>
+        <div style="font-size:13px;color:var(--muted)">Av. Principal 123 · La Paz</div>
+      </div>
+      <div style="text-align:right">
+        <div style="font-size:13px;color:var(--muted)">Contacto: +591 7000 0000</div>
+        <div style="font-size:13px;color:var(--muted)">Email: info@titanesfitclub.com</div>
+      </div>
+    </footer>
+  </div>
+</body>
+</html>

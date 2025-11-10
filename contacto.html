@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto - Titanes Fit Club</title>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oswald:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/contacto.css">
+</head>
+<body>
+    <!-- Partículas -->
+    <div class="particles" id="particles"></div>
+
+    <!-- Header -->
+    <header>
+        <nav class="navbar">
+            <a href="index.html" class="logo">Titanes Fit Club</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="servicios.html">Servicios</a></li>
+                <li><a href="productos.html">Productos</a></li>
+                <li><a href="contacto.html" style="color: #ffd700;">Contacto</a></li>
+                <li><a href="blog.html">Blog</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Contacto</h1>
+                <p class="subtitle">¿Listo para Transformarte?</p>
+                <p style="margin-bottom: 2rem; font-size: 1.2rem; max-width: 600px; margin-left: auto; margin-right: auto; color: #cccccc;">
+                    Estamos aquí para ayudarte a alcanzar tus objetivos. Contáctanos hoy mismo.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Información de Contacto -->
+    <section class="info-contacto">
+        <div class="container">
+            <div class="contacto-grid">
+                <div class="contacto-card">
+                    <div class="contacto-icon">📱</div>
+                    <h3>Teléfono</h3>
+                    <p>+52 55 1234 5678</p>
+                    <span>Lun-Vie: 6:00 AM - 10:00 PM</span>
+                </div>
+                
+                <div class="contacto-card">
+                    <div class="contacto-icon">📧</div>
+                    <h3>Email</h3>
+                    <p>info@titanesfitclub.com</p>
+                    <span>Respuesta en 24 horas</span>
+                </div>
+                
+                <div class="contacto-card">
+                    <div class="contacto-icon">📍</div>
+                    <h3>Dirección</h3>
+                    <p>Av. Reforma 123</p>
+                    <span>CDMX, México</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Formulario de Contacto -->
+    <section class="formulario-contacto">
+        <div class="container">
+            <div class="form-container">
+                <h2>Envíanos un Mensaje</h2>
+                <form id="contactForm">
+                    <div class="form-group">
+                        <input type="text" id="nombre" placeholder="Tu Nombre" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <input type="email" id="email" placeholder="Tu Email" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <input type="tel" id="telefono" placeholder="Tu Teléfono">
+                    </div>
+                    
+                    <div class="form-group">
+                        <select id="servicio" required>
+                            <option value="">Selecciona un servicio</option>
+                            <option value="entrenamiento">Entrenamiento Personal</option>
+                            <option value="clases">Clases Grupales</option>
+                            <option value="membresia">Membresías</option>
+                            <option value="productos">Productos</option>
+                            <option value="otro">Otro</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <textarea id="mensaje" rows="5" placeholder="Tu Mensaje" required></textarea>
+                    </div>
+                    
+                    <button type="submit" class="btn-enviar">Enviar Mensaje</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mapa -->
+    <section class="mapa">
+        <div class="container">
+            <h2>Visítanos</h2>
+            <div class="mapa-container">
+                <div class="mapa-placeholder">
+                    <div class="mapa-icon">📍</div>
+                    <p>Av. Reforma 123, CDMX</p>
+                    <span>Estamos en el corazón de la ciudad</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="logo" style="font-size: 2rem; margin-bottom: 1rem; font-family: 'Bebas Neue', cursive;">Titanes Fit Club</div>
+            
+            <div class="footer-links">
+                <a href="index.html">Inicio</a>
+                <a href="servicios.html">Servicios</a>
+                <a href="productos.html">Productos</a>
+                <a href="contacto.html">Contacto</a>
+                <a href="blog.html">Blog</a>
+            </div>
+
+            <p>&copy; 2024 Titanes Fit Club. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+    <script src="js/contacto.js"></script>
+</body>
+</html>

@@ -1,0 +1,914 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Entrenadores - Titanes Fit Club</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Estilos generales */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #0a0a0a;
+            color: #f5f5f5;
+            line-height: 1.6;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        h1, h2, h3, h4, .logo, .btn, .nav-menu a {
+            font-family: 'Oswald', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+
+        .section-title h2 {
+            font-size: 2.8rem;
+            color: #FFD700;
+            margin-bottom: 1rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .section-title p {
+            color: #b0b0b0;
+            max-width: 600px;
+            margin: 0 auto;
+            font-size: 1.1rem;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: #FFD700;
+        }
+
+        /* Header */
+        header {
+            background-color: #0a0a0a;
+            padding: 20px 0;
+            box-shadow: 0 2px 10px rgba(255, 215, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo h1 {
+            font-size: 2rem;
+            color: #FFD700;
+            font-weight: 700;
+            letter-spacing: 2px;
+        }
+
+        .logo span {
+            color: #ffffff;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-menu li {
+            margin-left: 2rem;
+        }
+
+        .nav-menu a {
+            color: #f5f5f5;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            position: relative;
+            font-size: 1.1rem;
+        }
+
+        .nav-menu a:hover {
+            color: #FFD700;
+        }
+
+        .nav-menu a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #FFD700;
+            transition: width 0.3s ease;
+        }
+
+        .nav-menu a:hover::after {
+            width: 100%;
+        }
+
+        .nav-menu a.active {
+            color: #FFD700;
+        }
+
+        .nav-menu a.active::after {
+            width: 100%;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(10, 10, 10, 0.8), rgba(10, 10, 10, 0.8)), 
+                        url('https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            padding: 120px 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            margin-bottom: 1.5rem;
+            color: #FFD700;
+            font-weight: 700;
+            letter-spacing: 3px;
+            text-shadow: 3px 3px 6px rgba(0,0,0,0.7);
+            line-height: 1.1;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            max-width: 700px;
+            margin: 0 auto 2.5rem;
+            color: #b0b0b0;
+            font-weight: 500;
+        }
+
+        /* Sección Entrenadores */
+        .entrenadores {
+            padding: 100px 0;
+        }
+
+        .entrenadores-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .entrenador-card {
+            background: #1a1a1a;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-top: 4px solid #FFD700;
+        }
+
+        .entrenador-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(255, 215, 0, 0.2);
+        }
+
+        .entrenador-img {
+            height: 320px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .entrenador-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .entrenador-card:hover .entrenador-img img {
+            transform: scale(1.05);
+        }
+
+        .entrenador-experiencia {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: #FFD700;
+            color: #0a0a0a;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-weight: 700;
+            font-size: 0.9rem;
+            font-family: 'Oswald', sans-serif;
+            letter-spacing: 1px;
+        }
+
+        .entrenador-content {
+            padding: 2rem;
+        }
+
+        .entrenador-nombre {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+
+        .entrenador-content h3 {
+            font-size: 1.6rem;
+            color: #FFD700;
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
+
+        .entrenador-especialidad {
+            color: #b0b0b0;
+            font-size: 1rem;
+            margin-bottom: 1.5rem;
+            font-style: italic;
+        }
+
+        .entrenador-descripcion {
+            color: #d0d0d0;
+            margin-bottom: 1.5rem;
+            font-size: 0.95rem;
+        }
+
+        .entrenador-certificaciones {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .certificacion {
+            background: #333;
+            color: #FFD700;
+            padding: 5px 10px;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+
+        .entrenador-redes {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .entrenador-redes a {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            background: #333;
+            color: #FFD700;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 40px;
+            transition: background 0.3s ease;
+            font-size: 1.1rem;
+        }
+
+        .entrenador-redes a:hover {
+            background: #FFD700;
+            color: #0a0a0a;
+            transform: scale(1.1);
+        }
+
+        /* Sección Especialidades */
+        .especialidades {
+            padding: 80px 0;
+            background: #1a1a1a;
+        }
+
+        .especialidades-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .especialidad-card {
+            background: #0a0a0a;
+            padding: 2rem;
+            border-radius: 10px;
+            text-align: center;
+            transition: transform 0.3s ease;
+            border-left: 4px solid #FFD700;
+        }
+
+        .especialidad-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .especialidad-icon {
+            font-size: 3.2rem;
+            color: #FFD700;
+            margin-bottom: 1rem;
+        }
+
+        .especialidad-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+            color: #FFD700;
+            font-weight: 600;
+        }
+
+        .especialidad-card p {
+            color: #b0b0b0;
+            font-size: 1rem;
+        }
+
+        /* Sección Proceso */
+        .proceso {
+            padding: 80px 0;
+        }
+
+        .proceso-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .proceso-pasos {
+            display: flex;
+            justify-content: space-between;
+            position: relative;
+            margin: 3rem 0;
+        }
+
+        .proceso-pasos::before {
+            content: '';
+            position: absolute;
+            top: 30px;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: #333;
+            z-index: 1;
+        }
+
+        .proceso-paso {
+            text-align: center;
+            position: relative;
+            z-index: 2;
+            flex: 1;
+        }
+
+        .paso-numero {
+            width: 60px;
+            height: 60px;
+            background: #FFD700;
+            color: #0a0a0a;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+            font-size: 1.5rem;
+            font-weight: 700;
+            font-family: 'Oswald', sans-serif;
+        }
+
+        .paso-titulo {
+            font-size: 1.2rem;
+            color: #FFD700;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        .paso-descripcion {
+            color: #b0b0b0;
+            font-size: 0.9rem;
+            padding: 0 10px;
+        }
+
+        /* CTA Section */
+        .cta {
+            padding: 100px 0;
+            background: linear-gradient(rgba(10, 10, 10, 0.9), rgba(10, 10, 10, 0.9)), 
+                        url('https://images.unsplash.com/photo-1534367507877-0edd93bd013b?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            text-align: center;
+        }
+
+        .cta h2 {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            color: #FFD700;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .cta p {
+            font-size: 1.3rem;
+            max-width: 700px;
+            margin: 0 auto 2.5rem;
+            color: #b0b0b0;
+            font-weight: 500;
+        }
+
+        .btn-cta {
+            display: inline-block;
+            background: #FFD700;
+            color: #0a0a0a;
+            padding: 15px 40px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.2rem;
+            transition: background 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            font-family: 'Oswald', sans-serif;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+        }
+
+        .btn-cta:hover {
+            background: #e6c200;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.4);
+        }
+
+        /* Footer */
+        footer {
+            background: #0a0a0a;
+            padding: 50px 0 20px;
+            border-top: 1px solid #333;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-logo h2 {
+            color: #FFD700;
+            margin-bottom: 1rem;
+            font-size: 1.8rem;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+        }
+
+        .footer-logo span {
+            color: #ffffff;
+        }
+
+        .footer-logo p {
+            color: #b0b0b0;
+            font-size: 1rem;
+        }
+
+        .footer-links h3, .footer-social h3 {
+            color: #FFD700;
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+            font-size: 1.3rem;
+        }
+
+        .footer-links ul {
+            list-style: none;
+        }
+
+        .footer-links ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-links a {
+            color: #b0b0b0;
+            text-decoration: none;
+            transition: color 0.3s ease;
+            font-size: 1rem;
+        }
+
+        .footer-links a:hover {
+            color: #FFD700;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .social-icons a {
+            display: inline-block;
+            width: 45px;
+            height: 45px;
+            background: #333;
+            color: #FFD700;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 45px;
+            transition: background 0.3s ease;
+            font-size: 1.2rem;
+        }
+
+        .social-icons a:hover {
+            background: #FFD700;
+            color: #0a0a0a;
+            transform: scale(1.1);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #333;
+            color: #b0b0b0;
+            font-size: 0.9rem;
+        }
+
+        /* Efectos deportivos adicionales */
+        .pulse {
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        .badge {
+            background: #FFD700;
+            color: #0a0a0a;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            display: inline-block;
+            margin-bottom: 10px;
+            font-family: 'Oswald', sans-serif;
+            letter-spacing: 1px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 2.8rem;
+            }
+
+            .section-title h2 {
+                font-size: 2.2rem;
+            }
+
+            .entrenadores-grid, .especialidades-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .proceso-pasos {
+                flex-direction: column;
+                gap: 2rem;
+            }
+
+            .proceso-pasos::before {
+                display: none;
+            }
+
+            .cta h2 {
+                font-size: 2.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <nav class="navbar">
+                <div class="logo">
+                    <h1>TITANES <span>FIT CLUB</span></h1>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="#">Inicio</a></li>
+                    <li><a href="#">Servicios</a></li>
+                    <li><a href="#" class="active">Entrenadores</a></li>
+                    <li><a href="#">Planes</a></li>
+                    <li><a href="#">Contacto</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>NUESTROS ENTRENADORES <span style="color: #ffffff;">EXPERTOS</span></h1>
+            <p>Conoce al equipo de profesionales que te guiará en tu transformación física y te ayudará a alcanzar tus metas.</p>
+            <div class="badge pulse">ENTRENADORES CERTIFICADOS</div>
+        </div>
+    </section>
+
+    <!-- Sección Entrenadores -->
+    <section class="entrenadores">
+        <div class="container">
+            <div class="section-title">
+                <h2>El Equipo Titanes</h2>
+                <p>Profesionales altamente capacitados con años de experiencia en el mundo del fitness</p>
+            </div>
+            <div class="entrenadores-grid">
+                <!-- Entrenador 1 -->
+                <div class="entrenador-card">
+                    <div class="entrenador-img">
+                        <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Entrenador Carlos">
+                        <div class="entrenador-experiencia">8 AÑOS</div>
+                    </div>
+                    <div class="entrenador-content">
+                        <div class="entrenador-nombre">
+                            <h3>CARLOS RODRÍGUEZ</h3>
+                        </div>
+                        <p class="entrenador-especialidad">Especialista en Fuerza y Acondicionamiento</p>
+                        <p class="entrenador-descripcion">Campeón nacional de powerlifting con más de 8 años de experiencia entrenando atletas de alto rendimiento y personas que buscan transformar su físico.</p>
+                        <div class="entrenador-certificaciones">
+                            <span class="certificacion">NSCA-CPT</span>
+                            <span class="certificacion">FMS Level 2</span>
+                            <span class="certificacion">Prehab/Rehab</span>
+                        </div>
+                        <div class="entrenador-redes">
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Entrenador 2 -->
+                <div class="entrenador-card">
+                    <div class="entrenador-img">
+                        <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Entrenadora Laura">
+                        <div class="entrenador-experiencia">6 AÑOS</div>
+                    </div>
+                    <div class="entrenador-content">
+                        <div class="entrenador-nombre">
+                            <h3>LAURA MÉNDEZ</h3>
+                        </div>
+                        <p class="entrenador-especialidad">Especialista en Yoga y Movilidad</p>
+                        <p class="entrenador-descripcion">Instructora certificada con 6 años de experiencia en yoga terapéutico y movilidad funcional. Especializada en recuperación deportiva y reducción de estrés.</p>
+                        <div class="entrenador-certificaciones">
+                            <span class="certificacion">E-RYT 500</span>
+                            <span class="certificacion">Yoga Therapy</span>
+                            <span class="certificacion">Pilates Mat</span>
+                        </div>
+                        <div class="entrenador-redes">
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#"><i class="fab fa-youtube"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Entrenador 3 -->
+                <div class="entrenador-card">
+                    <div class="entrenador-img">
+                        <img src="https://images.unsplash.com/photo-1534367507877-0edd93bd013b?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Entrenador Miguel">
+                        <div class="entrenador-experiencia">10 AÑOS</div>
+                    </div>
+                    <div class="entrenador-content">
+                        <div class="entrenador-nombre">
+                            <h3>MIGUEL TORRES</h3>
+                        </div>
+                        <p class="entrenador-especialidad">Especialista en Pérdida de Peso</p>
+                        <p class="entrenador-descripcion">Con una década de experiencia, Miguel se especializa en transformaciones corporales, ayudando a más de 500 clientes a alcanzar sus metas de composición corporal.</p>
+                        <div class="entrenador-certificaciones">
+                            <span class="certificacion">ACE-CPT</span>
+                            <span class="certificacion">Nutrition Coach</span>
+                            <span class="certificacion">Behavior Change</span>
+                        </div>
+                        <div class="entrenador-redes">
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                            <a href="#"><i class="fab fa-tiktok"></i></a>
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Entrenador 4 -->
+                <div class="entrenador-card">
+                    <div class="entrenador-img">
+                        <img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Entrenadora Ana">
+                        <div class="entrenador-experiencia">7 AÑOS</div>
+                    </div>
+                    <div class="entrenador-content">
+                        <div class="entrenador-nombre">
+                            <h3>ANA GUTIÉRREZ</h3>
+                        </div>
+                        <p class="entrenador-especialidad">Especialista en Entrenamiento Funcional</p>
+                        <p class="entrenador-descripcion">Ex atleta profesional convertida en entrenadora. Especializada en entrenamiento funcional y preparación física para deportes específicos.</p>
+                        <div class="entrenador-certificaciones">
+                            <span class="certificacion">NASM-CPT</span>
+                            <span class="certificacion">CES</span>
+                            <span class="certificacion">TRX</span>
+                        </div>
+                        <div class="entrenador-redes">
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Entrenador 5 -->
+                <div class="entrenador-card">
+                    <div class="entrenador-img">
+                        <img src="https://images.unsplash.com/photo-1517344884509-a0c97ec11bcc?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Entrenador Javier">
+                        <div class="entrenador-experiencia">9 AÑOS</div>
+                    </div>
+                    <div class="entrenador-content">
+                        <div class="entrenador-nombre">
+                            <h3>JAVIER LÓPEZ</h3>
+                        </div>
+                        <p class="entrenador-especialidad">Especialista en CrossFit y HIIT</p>
+                        <p class="entrenador-descripcion">Coach de CrossFit Level 3 con 9 años de experiencia. Ha entrenado a equipos competitivos y se especializa en entrenamientos de alta intensidad.</p>
+                        <div class="entrenador-certificaciones">
+                            <span class="certificacion">CF-L3</span>
+                            <span class="certificacion">Olympic Lifting</span>
+                            <span class="certificacion">Mobility WOD</span>
+                        </div>
+                        <div class="entrenador-redes">
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                            <a href="#"><i class="fab fa-youtube"></i></a>
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Entrenador 6 -->
+                <div class="entrenador-card">
+                    <div class="entrenador-img">
+                        <img src="https://images.unsplash.com/photo-1594381898411-846e7d193883?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Entrenadora Sofia">
+                        <div class="entrenador-experiencia">5 AÑOS</div>
+                    </div>
+                    <div class="entrenador-content">
+                        <div class="entrenador-nombre">
+                            <h3>SOFÍA RAMÍREZ</h3>
+                        </div>
+                        <p class="entrenador-especialidad">Especialista en Nutrición Deportiva</p>
+                        <p class="entrenador-descripcion">Nutricionista deportiva certificada que combina planes alimenticios con programas de entrenamiento para maximizar resultados y rendimiento.</p>
+                        <div class="entrenador-certificaciones">
+                            <span class="certificacion">RD</span>
+                            <span class="certificacion">CSSD</span>
+                            <span class="certificacion">CPT</span>
+                        </div>
+                        <div class="entrenador-redes">
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                            <a href="#"><i class="fab fa-tiktok"></i></a>
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Especialidades -->
+    <section class="especialidades">
+        <div class="container">
+            <div class="section-title">
+                <h2>Nuestras Especialidades</h2>
+                <p>Áreas de expertise de nuestro equipo de entrenadores</p>
+            </div>
+            <div class="especialidades-grid">
+                <div class="especialidad-card">
+                    <div class="especialidad-icon">
+                        <i class="fas fa-dumbbell"></i>
+                    </div>
+                    <h3>Fuerza y Potencia</h3>
+                    <p>Desarrolla tu fuerza máxima y potencia explosiva con programas personalizados</p>
+                </div>
+                <div class="especialidad-card">
+                    <div class="especialidad-icon">
+                        <i class="fas fa-running"></i>
+                    </div>
+                    <h3>Pérdida de Peso</h3>
+                    <p>Programas efectivos para reducción de grasa y mejora de composición corporal</p>
+                </div>
+                <div class="especialidad-card">
+                    <div class="especialidad-icon">
+                        <i class="fas fa-heartbeat"></i>
+                    </div>
+                    <h3>Salud Cardiovascular</h3>
+                    <p>Mejora tu resistencia y salud del corazón con entrenamientos específicos</p>
+                </div>
+                <div class="especialidad-card">
+                    <div class="especialidad-icon">
+                        <i class="fas fa-user-injured"></i>
+                    </div>
+                    <h3>Rehabilitación</h3>
+                    <p>Recuperación funcional y fortalecimiento posterior a lesiones</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Proceso -->
+    <section class="proceso">
+        <div class="container">
+            <div class="section-title">
+                <h2>Nuestro Proceso</h2>
+                <p>Cómo trabajamos contigo para alcanzar tus objetivos</p>
+            </div>
+            <div class="proceso-container">
+                <div class="proceso-pasos">
+                    <div class="proceso-paso">
+                        <div class="paso-numero">1</div>
+                        <h4 class="paso-titulo">Evaluación</h4>
+                        <p class="paso-descripcion">Evaluación física completa y establecimiento de objetivos realistas</p>
+                    </div>
+                    <div class="proceso-paso">
+                        <div class="paso-numero">2</div>
+                        <h4 class="paso-titulo">Planificación</h4>
+                        <p class="paso-descripcion">Diseño de programa personalizado según tus necesidades y metas</p>
+                    </div>
+                    <div class="proceso-paso">
+                        <div class="paso-numero">3</div>
+                        <h4 class="paso-titulo">Ejecución</h4>
+                        <p class="paso-descripcion">Sesiones de entrenamiento guiadas con seguimiento constante</p>
+                    </div>
+                    <div class="proceso-paso">
+                        <div class="paso-numero">4</div>
+                        <h4 class="paso-titulo">Ajustes</h4>
+                        <p class="paso-descripcion">Reevaluación y ajustes del programa según tu progreso</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta">
+        <div class="container">
+            <h2>¿LISTO PARA TRABAJAR CON UN ENTRENADOR?</h2>
+            <p>Reserva tu sesión de evaluación gratuita y comienza tu transformación con la guía de nuestros expertos</p>
+            <a href="#" class="btn-cta pulse">¡Agenda tu Sesión!</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h2>TITANES <span>FIT CLUB</span></h2>
+                    <p>Transforma tu cuerpo, fortalece tu mente</p>
+                </div>
+                <div class="footer-links">
+                    <h3>Enlaces Rápidos</h3>
+                    <ul>
+                        <li><a href="#">Inicio</a></li>
+                        <li><a href="#">Servicios</a></li>
+                        <li><a href="#">Entrenadores</a></li>
+                        <li><a href="#">Planes</a></li>
+                        <li><a href="#">Contacto</a></li>
+                    </ul>
+                </div>
+                <div class="footer-social">
+                    <h3>Síguenos</h3>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 Titanes Fit Club. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

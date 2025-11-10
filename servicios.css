@@ -1,0 +1,407 @@
+/* Servicios Principal */
+.servicios-principal {
+    padding: 100px 0;
+    background: #0a0a0a;
+}
+
+.servicio-categoria {
+    margin-bottom: 80px;
+}
+
+.categoria-header {
+    text-align: center;
+    margin-bottom: 3rem;
+    padding: 2rem;
+    background: linear-gradient(135deg, #1a1a1a, #0d0d0d);
+    border-radius: 15px;
+    border-left: 5px solid #ffd700;
+}
+
+.categoria-icon {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    color: #ffd700;
+}
+
+.categoria-header h3 {
+    font-family: 'Bebas Neue', cursive;
+    font-size: 2.5rem;
+    color: #ffd700;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.categoria-header p {
+    font-size: 1.2rem;
+    color: #cccccc;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.servicios-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.servicio-card {
+    background: linear-gradient(145deg, #1a1a1a, #0d0d0d);
+    padding: 2.5rem;
+    border-radius: 15px;
+    border: 2px solid #333;
+    transition: all 0.4s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.servicio-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #ffd700, #ffed4e);
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+.servicio-card:hover::before {
+    transform: scaleX(1);
+}
+
+.servicio-card:hover {
+    transform: translateY(-10px);
+    border-color: #ffd700;
+    box-shadow: 0 20px 40px rgba(255, 215, 0, 0.2);
+}
+
+.servicio-icon {
+    font-size: 3.5rem;
+    margin-bottom: 1.5rem;
+    color: #ffd700;
+    text-align: center;
+}
+
+.servicio-card h4 {
+    font-family: 'Bebas Neue', cursive;
+    font-size: 1.8rem;
+    color: #ffffff;
+    margin-bottom: 1rem;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.servicio-card p {
+    color: #cccccc;
+    text-align: center;
+    margin-bottom: 1.5rem;
+    font-size: 1.1rem;
+}
+
+.servicio-lista {
+    list-style: none;
+    margin-bottom: 2rem;
+}
+
+.servicio-lista li {
+    color: #cccccc;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #333;
+    position: relative;
+    padding-left: 1.5rem;
+}
+
+.servicio-lista li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: #ffd700;
+    font-weight: bold;
+}
+
+.servicio-precio {
+    font-family: 'Bebas Neue', cursive;
+    font-size: 2.5rem;
+    color: #ffd700;
+    text-align: center;
+    margin-bottom: 1.5rem;
+    font-weight: bold;
+}
+
+.servicio-precio span {
+    font-size: 1rem;
+    color: #cccccc;
+}
+
+.btn-reservar {
+    width: 100%;
+    background: linear-gradient(135deg, #ffd700, #ffed4e);
+    color: #000;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 8px;
+    font-family: 'Oswald', sans-serif;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 2px solid #ffd700;
+}
+
+.btn-reservar:hover {
+    background: transparent;
+    color: #ffd700;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(255, 215, 0, 0.3);
+}
+
+/* Membresías */
+.membresias {
+    padding: 100px 0;
+    background: #111111;
+}
+
+.membresias-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.membresia-card {
+    background: linear-gradient(145deg, #1a1a1a, #0d0d0d);
+    border-radius: 15px;
+    padding: 2.5rem;
+    border: 2px solid #333;
+    transition: all 0.4s ease;
+    position: relative;
+    text-align: center;
+}
+
+.membresia-card.destacada {
+    border-color: #ffd700;
+    transform: scale(1.05);
+    box-shadow: 0 20px 40px rgba(255, 215, 0, 0.3);
+}
+
+.membresia-badge {
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #ffd700;
+    color: #000;
+    padding: 5px 20px;
+    border-radius: 20px;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+}
+
+.membresia-header {
+    margin-bottom: 2rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 2px solid #333;
+}
+
+.membresia-header h3 {
+    font-family: 'Bebas Neue', cursive;
+    font-size: 2.2rem;
+    color: #ffd700;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.membresia-precio {
+    font-family: 'Bebas Neue', cursive;
+    font-size: 3rem;
+    color: #ffffff;
+    font-weight: bold;
+}
+
+.membresia-precio span {
+    font-size: 1.2rem;
+    color: #cccccc;
+}
+
+.membresia-beneficios {
+    list-style: none;
+    margin-bottom: 2.5rem;
+    text-align: left;
+}
+
+.membresia-beneficios li {
+    color: #cccccc;
+    padding: 0.8rem 0;
+    border-bottom: 1px solid #333;
+    font-size: 1rem;
+}
+
+.btn-membresia {
+    width: 100%;
+    background: linear-gradient(135deg, #333, #555);
+    color: #ffffff;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 8px;
+    font-family: 'Oswald', sans-serif;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 2px solid #555;
+}
+
+.btn-membresia.destacado {
+    background: linear-gradient(135deg, #ffd700, #ffed4e);
+    color: #000;
+    border-color: #ffd700;
+}
+
+.btn-membresia:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(255, 215, 0, 0.3);
+}
+
+.btn-membresia:not(.destacado):hover {
+    background: linear-gradient(135deg, #444, #666);
+    border-color: #ffd700;
+}
+
+/* CTA Final */
+.cta-final {
+    padding: 120px 0;
+    background: linear-gradient(135deg, #000000, #111111);
+    text-align: center;
+    position: relative;
+}
+
+.cta-final::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80');
+    background-size: cover;
+    background-position: center;
+    opacity: 0.1;
+}
+
+.cta-content {
+    position: relative;
+    z-index: 2;
+}
+
+.cta-content h2 {
+    font-family: 'Bebas Neue', cursive;
+    font-size: 4rem;
+    color: #ffd700;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+}
+
+.cta-content p {
+    font-size: 1.3rem;
+    color: #cccccc;
+    margin-bottom: 3rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.cta-buttons {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.cta-button.secundario {
+    background: transparent;
+    color: #ffd700;
+    border: 3px solid #ffd700;
+}
+
+.cta-button.secundario:hover {
+    background: #ffd700;
+    color: #000;
+}
+
+/* Animaciones específicas para servicios */
+@keyframes slideInUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.servicio-card,
+.membresia-card {
+    animation: slideInUp 0.6s ease forwards;
+}
+
+/* Responsive Design para Servicios */
+@media (max-width: 768px) {
+    .servicios-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .membresias-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .membresia-card.destacada {
+        transform: scale(1);
+    }
+    
+    .cta-content h2 {
+        font-size: 2.5rem;
+    }
+    
+    .cta-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .cta-button.secundario {
+        margin-top: 1rem;
+    }
+    
+    .servicio-card,
+    .membresia-card {
+        padding: 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .categoria-header {
+        padding: 1.5rem;
+    }
+    
+    .categoria-header h3 {
+        font-size: 2rem;
+    }
+    
+    .servicio-precio {
+        font-size: 2rem;
+    }
+    
+    .membresia-precio {
+        font-size: 2.5rem;
+    }
+}
